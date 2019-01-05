@@ -13,6 +13,8 @@ namespace NowyTestGita
             Console.WriteLine("ktore haslo chcesz zgadnac?: ");
             Console.WriteLine("1.Haslo Noraza");
             Console.WriteLine("2.Haslo Gomeza");
+            Console.WriteLine("trzecia funkcja jaka dodamy");
+            Console.WriteLine("czwarta funkcja jaka dodamy");
             int wybor = Convert.ToInt32(Console.ReadLine());
             switch (wybor)
             {
