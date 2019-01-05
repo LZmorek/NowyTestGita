@@ -19,11 +19,11 @@ namespace NowyTestGita
             switch (wybor)
             {
                 case 1:
-                    Haslo wpisz = new Haslo();
+                    Program wpisz = new Program();
                     wpisz.Zgaduj();
                     break;
                 case 2:
-                    Haslo2 wpisz2 = new Haslo2();
+                    Program wpisz2 = new Program();
                     wpisz2.ZgadujHaslo();
                     break;
                 default:
@@ -32,9 +32,25 @@ namespace NowyTestGita
             }
             Console.ReadKey();
         }
-    }
-    class Haslo
-    {
+
+        public void ZgadujHaslo()
+        {
+            while (true)
+            {
+                Console.WriteLine("podaj slowo haslo:");
+                string pytanie = Console.ReadLine();
+                if (pytanie.Contains("tajemnica"))
+                {
+                    Console.WriteLine("Dobra robota");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("wpisz ponownie haslo");
+                }
+
+            }
+        }
         public void Zgaduj()
         {
             while (true)
@@ -56,21 +72,5 @@ namespace NowyTestGita
                 }
             }
         }
-
-    }
-    class Haslo2
-    {
-        public void ZgadujHaslo()
-        {
-            while (true)
-            {
-                Console.WriteLine("podaj slowo haslo:");
-                string pytanie = Console.ReadLine();
-                if (pytanie.Contains("tajemnica"))
-                    return;
-                else { Console.WriteLine("wpisz ponownie haslo"); }
-
-            }
-        }
-    }
+  
 }
