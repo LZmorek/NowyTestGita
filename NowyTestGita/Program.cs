@@ -16,30 +16,34 @@ namespace NowyTestGita
             Console.WriteLine("trzecia funkcja jaka dodamy");
             Console.WriteLine("czwarta funkcja jaka dodamy");
             int wybor = Convert.ToInt32(Console.ReadLine());
+
+            Hasla wpisz = new Hasla();
+           
             switch (wybor)
             {
                 case 1:
-                    Program wpisz = new Program();
-                    wpisz.Zgaduj();
+                    wpisz.HasloNoraza();
                     break;
                 case 2:
-                    Program wpisz2 = new Program();
-                    wpisz2.ZgadujHaslo();
+                    wpisz.HasloGomeza();
                     break;
                 default:
                     Console.WriteLine("zly wybor, wybierz 1 lub 2 ");
                     break;
             }
             Console.ReadKey();
-        }
+        }        
+    }
 
-        public void ZgadujHaslo()
+    class Hasla
+    {
+        public void HasloGomeza()
         {
             while (true)
-            {
+            {             
                 Console.WriteLine("podaj slowo haslo:");
-                string pytanie = Console.ReadLine();
-                if (pytanie.Contains("tajemnica"))
+                string haslo = Console.ReadLine();
+                if (haslo.Contains("tajemnica"))
                 {
                     Console.WriteLine("Dobra robota");
                     break;
@@ -48,14 +52,12 @@ namespace NowyTestGita
                 {
                     Console.WriteLine("wpisz ponownie haslo");
                 }
-
             }
         }
-        public void Zgaduj()
+        public void HasloNoraza()
         {
             while (true)
             {
-
                 String haslowpisane;
                 String haslostale = "Zupa Pomidorowa";
                 Console.WriteLine("Prosze podac haslo: ");
@@ -68,10 +70,8 @@ namespace NowyTestGita
                 else
                 {
                     Console.WriteLine("jestes BARAaaaaN spróbuj ponownie:");
-
                 }
             }
         }
-    }
-  
+    }  
 }
