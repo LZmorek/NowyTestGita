@@ -10,40 +10,49 @@ namespace NowyTestGita
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("ktore haslo chcesz zgadnac?: ");
-            Console.WriteLine("1.Haslo Noraza");
-            Console.WriteLine("2.Haslo Gomeza");
-            Console.WriteLine("trzecia funkcja jaka dodamy");
-            Console.WriteLine("czwarta funkcja jaka dodamy");
-            int wybor = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ktore haslo chcesz zgadnac?: ");
+            Console.WriteLine("1.Haslo metoda Contains");
+            Console.WriteLine("2.Haslo metoda Equals");
+            Console.WriteLine("3.Haslo metoda Array");
 
-            Hasla wpisz = new Hasla();
+            int choose = Convert.ToInt32(Console.ReadLine());
+
+            Passwords write = new Passwords();
            
-            switch (wybor)
+            switch (choose)
             {
                 case 1:
-                    wpisz.HasloNoraza();
+                    write.PassGuess();
                     break;
                 case 2:
-                    wpisz.HasloGomeza();
+                    write.PassGuess2();
+                    break;
+                case 3:
+                    write.PassGuess3();
                     break;
                 default:
-                    Console.WriteLine("zly wybor, wybierz 1 lub 2 ");
+                    Console.WriteLine("Bledny wybor, wybierz 1,2 lub 3 ");
                     break;
             }
             Console.ReadKey();
         }        
     }
 
-    class Hasla
+    class Passwords
     {
-        public void HasloGomeza()
+        String passWritten;
+        String passConst = "Zupa Pomidorowa";
+        String[] passArray = new String[3]
+        {"kupa" , "gowno" , "sraka"};
+
+
+        public void PassGuess()
         {
             while (true)
             {             
                 Console.WriteLine("podaj slowo haslo:");
-                string haslo = Console.ReadLine();
-                if (haslo.Contains("tajemnica"))
+                string passWritten = Console.ReadLine();
+                if (passWritten.Contains("tajemnica"))
                 {
                     Console.WriteLine("Dobra robota");
                     break;
@@ -51,26 +60,49 @@ namespace NowyTestGita
                 else
                 {
                     Console.WriteLine("wpisz ponownie haslo");
+                    
                 }
             }
         }
-        public void HasloNoraza()
+        public void PassGuess2()
         {
             while (true)
             {
-                String haslowpisane;
-                String haslostale = "Zupa Pomidorowa";
                 Console.WriteLine("Prosze podac haslo: ");
-                haslowpisane = Console.ReadLine();
-                if (haslowpisane.Equals(haslostale))
+                passWritten = Console.ReadLine();
+
+                if (passWritten.Equals(passConst))
                 {
                     Console.WriteLine("jestes super odgadles haslo");
                     break;
                 }
                 else
                 {
-                    Console.WriteLine("jestes BARAaaaaN spróbuj ponownie:");
+                    Console.WriteLine("jestes Baran spróbuj ponownie:");
+                    
                 }
+            }
+        }
+        public void PassGuess3()
+        {
+            while (true)
+            {
+                Console.WriteLine("Podaj jedno z dozwolonych hasel: ");
+
+                passWritten = Console.ReadLine();
+
+                if (passArray.Contains(passWritten))
+                {
+                    Console.WriteLine("Swietnie! Kupa radosci!");
+                    break;
+                }
+
+                else
+                {
+                    Console.WriteLine("Wez sie do kupy chopie!");
+                   
+                }
+                    
             }
         }
     }  
